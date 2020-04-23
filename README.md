@@ -96,7 +96,7 @@ After these examples you can use the API which suit your needs.
 	E.g. [cls_1: 3.41, cls_2: 2.57, cls_3: 0.40, cls_4: 1.50]
 4. Now take the max between the value and 1.0 to clip lower values at 1.0
 	E.g. [cls_1: 3.41, cls_2: 2.57, cls_3: 1.00, cls_4: 1.50]
-4a [Optional]. Take the max value from 3 and divide all values with that.
+4a.[Optional] Take the max value from 3 and divide all values with that.
 	E.g. [cls_1: 1.00, cls_2: 0.755, cls_3: 0.117, cls_4: 0.442]
 
 Now, these are your class weights. As you can see the cls_3 which has highest occurrence is given least weight and cls_1 which has the least freq. is given highest weight.
