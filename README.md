@@ -96,10 +96,10 @@ After these examples you can use the API which suit your needs.
 	E.g. [cls_1: 3.41, cls_2: 2.57, cls_3: 0.40, cls_4: 1.50]
 4. Now take the max between the value and 1.0 to clip lower values at 1.0
 	E.g. [cls_1: 3.41, cls_2: 2.57, cls_3: 1.00, cls_4: 1.50]
-4a.[Optional] Take the max value from 3 and divide all values with that.
+5. [Optional] Take the max value from 3 and divide all values with that.
 	E.g. [cls_1: 1.00, cls_2: 0.755, cls_3: 0.117, cls_4: 0.442]
 
-Now, these are your class weights. As you can see the cls_3 which has highest occurrence is given least weight and cls_1 which has the least freq. is given highest weight.
+Now, these are your class weights. As you can see the cls_3 which has highest frequency is given least weight and cls_1 which has the least frequency is given highest weight.
 As per "https://www.tensorflow.org/api_docs/python/tf/nn/weighted_cross_entropy_with_logits?hl=en", these weights greater than 1 which decrease false negative counts which improves recall.
-And if we want to reduce false positive and improve precision than use weights computed in 4a. -- again as per the above link.
+And if we want to reduce false positive and improve precision than use weights computed in 5. -- again as per the above link.
 
