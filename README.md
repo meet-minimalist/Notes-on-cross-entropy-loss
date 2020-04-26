@@ -3,7 +3,7 @@
 This is a reference note for myself if I ever want to recall the formulas and the implementations.
 
 
-1) Cross Entropy Loss for Binary classification
+## 1) Cross Entropy Loss for Binary classification
 
 ##### ___loss = label * (-1) * log(pred) + (1 - label) * (-1) * log(1 - pred)___
 
@@ -20,7 +20,7 @@ Same way for label=0, the loss will be
 So, the first equation actually handles both the cases.
 
 
-2) Softmax Cross Entropy Loss for Binary Classification
+## 2) Softmax Cross Entropy Loss for Binary Classification
 
 ##### ___softmax_logits = softmax(logits)___
 ##### ___loss_softmax_cross = label * (-1) * log(softmax_logits) + (1 - label) * (-1) * log(1 - softmax_logits)___
@@ -28,7 +28,7 @@ So, the first equation actually handles both the cases.
 Here, because the logits are softmaxed, they contain the probability of being a positive class.
 
 
-3) Softmax Cross Entropy Loss for Multi Class Classification
+## 3) Softmax Cross Entropy Loss for Multi Class Classification
 ##### ___softmax_logits = softmax(logits)___
 ##### ___loss_softmax_cross_multi = sum(label * (-1) * log(softmax_logits))___
 
@@ -36,7 +36,7 @@ Here, labels and logits both are a vector / single column array. E.g. for 10 cla
 The sum represents the sum across the dimension depicted by num_of_classes which is in this case last dims. So, the loss is a scalar value.
 
 
-4) Weighted Softmax Cross Entropy Loss for Multi Class Classification
+## 4) Weighted Softmax Cross Entropy Loss for Multi Class Classification
 ##### ___softmax_logits = softmax(logits)___
 ##### ___loss_softmax_cross_multi = sum(cls_weight * label * (-1) * log(softmax_logits))___
 
@@ -45,12 +45,12 @@ The loss is a scalar value.
 The cls_weight has a separate weight for each class.
 
 
-5) Sigmoid Cross Entropy Loss
+## 5) Sigmoid Cross Entropy Loss
 The sigmoid cross entropy is same as softmax cross entropy except for the fact that instead of softmax, we apply sigmoid function on logits before feeding them.
 
 
 
-### Notes on implementation part:
+## Notes on implementation part:
 Now that we know the mathematical formula, we can implement the loss function by ourselves.
 But when Tensorflow has made a wheel then why to reinvent the same wheel.
 The Tensorflow provides several APIs for the cross entropy losses.
